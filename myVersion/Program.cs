@@ -131,20 +131,32 @@ int[] Convert2DArrayIn1DArray(int[,] array)
     return arr;
 }
 
-void SortMinMax(int[] arr, int start)
+void QuickSortHoare(int[] Array, int FerstIndex, int LastIndex)
 {
-    if (start == arr.Length)
+    if (FerstIndex >= LastIndex)
+    {
         return;
+    }
 
-    int min = start;
-    for (int i = start + 1; i < arr.Length; i++)
-        if (arr[i] < arr[min])
-            min = i;
-    int tmp = arr[start];
-    arr[start] = arr[min];
-    arr[min] = tmp;
+    int change;
+    int medium = FerstIndex;
+    for (int i = FerstIndex; i <= LastIndex; i++)
+    {
+        if (Array[i] < Array[LastIndex])
+        {
+            change = Array[medium];
+            Array[medium] = Array[i];
+            Array[i] = change;
+            medium += 1;
+        }
+    }
 
-    SortMinMax(arr, start + 1);
+    change = Array[medium];
+    Array[medium] = Array[LastIndex];
+    Array[LastIndex] = change;
+
+    QuickSortHoare(Array, FerstIndex, medium - 1);
+    QuickSortHoare(Array, medium + 1, LastIndex);
 }
 
 void PrintArray1D(int[] array, string text)
@@ -205,7 +217,7 @@ int[] arr = Convert2DArrayIn1DArray(myArray);
 
 PrintArray1D(arr, "конвертированный исходный");
 
-SortMinMax(arr, 0);
+QuickSortHoare(arr, 0, arr.Length - 1);
 
 PrintArray1D(arr, "отсортированный по возрастанию");
 
