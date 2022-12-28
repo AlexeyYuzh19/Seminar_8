@@ -178,7 +178,7 @@ void ArrayFrequencyCounter(int[] array)
 
         for (int j = 0; j < array.Length; j++)
         {
-            if (arr[j] == equality)
+            if (array[j] == equality)
             {
                 count++;
                 m = j + 1;
