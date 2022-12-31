@@ -139,24 +139,25 @@ void QuickSortHoare(int[] Array, int FerstIndex, int LastIndex)
     }
 
     int change;
-    int medium = FerstIndex;
+    int SupportIndex = FerstIndex;
+
     for (int i = FerstIndex; i <= LastIndex; i++)
     {
         if (Array[i] < Array[LastIndex])
         {
-            change = Array[medium];
-            Array[medium] = Array[i];
+            change = Array[SupportIndex];
+            Array[SupportIndex] = Array[i];
             Array[i] = change;
-            medium += 1;
+            SupportIndex += 1;
         }
     }
 
-    change = Array[medium];
-    Array[medium] = Array[LastIndex];
+    change = Array[SupportIndex];
+    Array[SupportIndex] = Array[LastIndex];
     Array[LastIndex] = change;
 
-    QuickSortHoare(Array, FerstIndex, medium - 1);
-    QuickSortHoare(Array, medium + 1, LastIndex);
+    QuickSortHoare(Array, FerstIndex, SupportIndex - 1);
+    QuickSortHoare(Array, SupportIndex + 1, LastIndex);
 }
 
 void PrintArray1D(int[] array, string text)
