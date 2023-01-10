@@ -138,23 +138,23 @@ void QuickSortHoare(int[] Array, int FerstIndex, int LastIndex)
         return;
     }
 
-    int change;
+    int Change;
     int SupportIndex = FerstIndex;
 
     for (int i = FerstIndex; i <= LastIndex; i++)
     {
         if (Array[i] < Array[LastIndex])
         {
-            change = Array[SupportIndex];
+            Change = Array[SupportIndex];
             Array[SupportIndex] = Array[i];
-            Array[i] = change;
+            Array[i] = Change;
             SupportIndex += 1;
         }
     }
 
-    change = Array[SupportIndex];
+    Change = Array[SupportIndex];
     Array[SupportIndex] = Array[LastIndex];
-    Array[LastIndex] = change;
+    Array[LastIndex] = Change;
 
     QuickSortHoare(Array, FerstIndex, SupportIndex - 1);
     QuickSortHoare(Array, SupportIndex + 1, LastIndex);
