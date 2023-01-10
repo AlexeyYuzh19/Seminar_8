@@ -200,7 +200,7 @@ void ArrayFrequencyCounter(int[] array)
 
         var eq = String.Format("{0,4}", equality);
         var cou = String.Format("{0,4}", count);
-        System.Console.WriteLine($"число {eq}  встречается {cou}  раз");
+        System.Console.WriteLine($"значение {eq}  встречается {cou}  раз");
 
         count = 0;
     }
