@@ -111,7 +111,6 @@ void PrintArray2D(int[,] array)
         System.Console.WriteLine();
     }
     Console.ResetColor();
-    System.Console.WriteLine();
 }
 
 int[] Convert2DArrayIn1DArray(int[,] array)
@@ -179,8 +178,9 @@ void PrintArray1D(int[] array, string text)
     System.Console.WriteLine();
 }
 
-void ArrayFrequencyCounter(int[] array)
+Dictionary<int, int> FrequencyDictionaryInArray(int[] array)
 {
+    var frequencyDictionary = new Dictionary<int, int>();
     int m = 0;
     int equality;
     int count = 0;
@@ -197,13 +197,24 @@ void ArrayFrequencyCounter(int[] array)
                 m = j + 1;
             }
         }
-
-        var eq = String.Format("{0,4}", equality);
-        var cou = String.Format("{0,4}", count);
-        System.Console.WriteLine($"значение {eq}  встречается {cou}  раз");
-
+        frequencyDictionary.Add(equality, count);
         count = 0;
     }
+    return frequencyDictionary;
+}
+
+void PrintFrequencyDictionary(Dictionary<int, int> FrequencyDictionary)
+{
+    System.Console.WriteLine();
+    Console.ForegroundColor = ConsoleColor.DarkCyan;
+
+    foreach (var record in FrequencyDictionary)
+    {
+        Console.WriteLine($"значение {String.Format("{0,4}", record.Key)}  встречается {String.Format("{0,4}", record.Value)} раз");
+    }
+    
+    Console.ResetColor();
+    System.Console.WriteLine();
 }
 
 // Код решения
@@ -222,4 +233,4 @@ QuickSortHoare(arr, 0, arr.Length - 1);
 
 PrintArray1D(arr, "отсортированный по возрастанию");
 
-ArrayFrequencyCounter(arr);
+PrintFrequencyDictionary(FrequencyDictionaryInArray(arr));
