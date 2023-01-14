@@ -1,0 +1,15 @@
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\bin\Debug\net6.0\homeworkLection_8.exe
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\bin\Debug\net6.0\homeworkLection_8.deps.json
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\bin\Debug\net6.0\homeworkLection_8.runtimeconfig.json
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\bin\Debug\net6.0\homeworkLection_8.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\bin\Debug\net6.0\homeworkLection_8.pdb
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.AssemblyInfo.cs
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\refint\homeworkLection_8.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.pdb
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\homeworkLection_8.genruntimeconfig.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\Seminar_8\homeworkLection_8\obj\Debug\net6.0\ref\homeworkLection_8.dll
