@@ -137,23 +137,18 @@ void QuickSortHoare(int[] Array, int FerstIndex, int LastIndex)
         return;
     }
 
-    int Change;
     int SupportIndex = FerstIndex;
 
     for (int i = FerstIndex; i <= LastIndex; i++)
     {
         if (Array[i] < Array[LastIndex])
         {
-            Change = Array[SupportIndex];
-            Array[SupportIndex] = Array[i];
-            Array[i] = Change;
+            (Array[i], Array[SupportIndex]) = (Array[SupportIndex], Array[i]);
             SupportIndex += 1;
         }
     }
 
-    Change = Array[SupportIndex];
-    Array[SupportIndex] = Array[LastIndex];
-    Array[LastIndex] = Change;
+    (Array[LastIndex], Array[SupportIndex]) = (Array[SupportIndex], Array[LastIndex]);
 
     QuickSortHoare(Array, FerstIndex, SupportIndex - 1);
     QuickSortHoare(Array, SupportIndex + 1, LastIndex);
@@ -212,7 +207,7 @@ void PrintFrequencyDictionary(Dictionary<int, int> FrequencyDictionary)
     {
         Console.WriteLine($"значение {String.Format("{0,4}", record.Key)}  встречается {String.Format("{0,4}", record.Value)} раз");
     }
-    
+
     Console.ResetColor();
     System.Console.WriteLine();
 }
