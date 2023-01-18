@@ -6,6 +6,8 @@
 Делаем ввод массива с консоли - с окончанием вода по кодовому слову + печать заданного массива.
 */
 
+// ВАРИАНТ 1 кода
+
 // М Е Т О Д Ы
 
 int[] EnterArray(string action, string errorAction)
@@ -68,10 +70,10 @@ void PrintArray1D(int[] array, string text)
     System.Console.WriteLine();
 }
 
-void NumMoreNull(int[] array, out int Numbers, out int arL)
+void NumMoreNull_1(int[] array, out int Numbers_1, out int arL_1)
 {
-    Numbers = 0;
-    arL = array.Length;
+    Numbers_1 = 0;
+    arL_1 = array.Length;
 
     System.Console.WriteLine("\nОтрицательные и нулевые значения со значениями больше нуля разделены цветами :\n");
 
@@ -83,13 +85,12 @@ void NumMoreNull(int[] array, out int Numbers, out int arL)
             System.Console.Write($" {ari}");
             Console.ResetColor();
             System.Console.Write(" | ");
-            Numbers++;
+            Numbers_1++;
         }
         else
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             System.Console.Write($" {ari}");
-            //System.Console.Write(ari);
             Console.ResetColor();
             System.Console.Write(" | ");
         }
@@ -100,6 +101,8 @@ void NumMoreNull(int[] array, out int Numbers, out int arL)
 
 Console.Clear();
 
+System.Console.WriteLine("Первый вариант кода - через создание и обработку массива.");
+
 int[] Arr = EnterArray("Введите число : ", "Задано не целое число, повторите ввод.");
 
 if (Arr.Length == 0)
@@ -108,10 +111,111 @@ if (Arr.Length == 0)
     System.Console.WriteLine("Массив не задан.");
     Console.ResetColor();
 }
-else PrintArray1D(Arr, "Из чисел сформирован одномерный");
+else
+{
+    PrintArray1D(Arr, "Из чисел сформирован одномерный");
 
-NumMoreNull(Arr, out int Numbers, out int arL);
+    NumMoreNull_1(Arr, out int Numbers_1, out int arL_1);
 
-Console.ForegroundColor = ConsoleColor.DarkRed;
-System.Console.WriteLine($"\n\nИз {arL} чисел количество значений больше нуля = {Numbers}\n");
-Console.ResetColor();
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    System.Console.WriteLine($"\n\nИз {arL_1} чисел количество значений больше нуля = {Numbers_1}\n");
+    Console.ResetColor();
+}
+
+// ВАРИАНТ 2 кода
+
+// М Е Т О Д Ы
+
+List<int> EnterNumbers(string action, string errorAction)
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    System.Console.WriteLine("Вводите числа подтверждением клавишей <Enter> - по окончании ввода наберите кодовое слово < stop >.");
+
+    int EnNum;
+    string text;
+    List<int> EnArray = new List<int>();
+
+    do
+    {
+        while (true)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write(action);
+            text = Console.ReadLine();
+
+            if (int.TryParse(text, out EnNum))
+            {
+                EnArray.Add(EnNum);
+                break;
+            }
+            if (text == "stop")
+            {
+                Console.ResetColor();
+                break;
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(errorAction);
+            Console.ResetColor();
+        }
+    }
+    while (text != "stop");
+
+    Console.ResetColor();
+    return EnArray;
+}
+
+void NumMoreNull_2(List<int> EnArray, out int Numbers_2, out int arL_2)
+{
+    Numbers_2 = 0;
+    arL_2 = EnArray.Count;
+
+    System.Console.WriteLine("\nОтрицательные и нулевые значения со значениями больше нуля разделены цветами :\n");
+
+    for (int i = 0; i < arL_2; i++)
+    {
+        if (EnArray[i] > 0)
+        {
+            var ar = String.Format("{0,2}", EnArray[i]);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            System.Console.Write(ar);
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            if (i < arL_2 - 1) System.Console.Write(" | ");
+
+            Numbers_2++;
+        }
+        else
+        {
+            var ar = String.Format("{0,2}", EnArray[i]);
+
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            System.Console.Write(ar);
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            if (i < arL_2 - 1) System.Console.Write(" | ");
+        }
+    }
+    Console.ResetColor();
+    System.Console.WriteLine();
+}
+
+// К О Д 
+
+System.Console.WriteLine("Второй вариант кода - через создание и обработку списка.");
+
+List<int> EnNum = EnterNumbers("Введите число : ", "Задано не целое число, повторите ввод.");
+
+if (EnNum.Count == 0)
+{
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    System.Console.WriteLine("Числа не заданы.");
+    Console.ResetColor();
+}
+else
+{
+    NumMoreNull_2(EnNum, out int Numbers_2, out int arL_2);
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    System.Console.WriteLine($"\nИз {arL_2} чисел количество значений больше нуля = {Numbers_2}\n");
+    Console.ResetColor();
+}
+
