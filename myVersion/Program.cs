@@ -52,9 +52,9 @@ metka:
 
 void EnterArrayParameter(out int lines, out int columns, out int leftRange, out int rightRange)
 {
-    lines = CheckSize($"Введите количество строк матрицы : ");
+    lines = CheckSize("Введите количество строк матрицы : ");
 
-    columns = CheckSize($"Введите количество столбцов матрицы : ");
+    columns = CheckSize("Введите количество столбцов матрицы : ");
 
 metka:
     leftRange = CheckInputNumber("Введите величину левого значения (края) матрицы : ");
